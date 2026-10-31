@@ -3,7 +3,9 @@ import pytest
 from harilebs_core.base import BaseService
 
 
-__test__ = False
+class TestService(BaseService):
+    __test__ = False
+
     """Test implementation of BaseService."""
 
     def __init__(self, name: str) -> None:
@@ -16,8 +18,6 @@ __test__ = False
 
     async def _on_shutdown(self) -> None:
         self.shutdown_count += 1
-
-
 def test_service_initialization():
     service = TestService("test_service")
 
