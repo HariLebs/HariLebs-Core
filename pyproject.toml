@@ -21,12 +21,12 @@ telegram = [
 ]
 
 database-sqlite = [
-    "sqlalchemy>=2.0,<3.0",
+    "sqlalchemy[asyncio]>=2.0,<3.0",
     "aiosqlite>=0.20,<1.0",
 ]
 
 database-postgres = [
-    "sqlalchemy>=2.0,<3.0",
+    "sqlalchemy[asyncio]>=2.0,<3.0",
     "asyncpg>=0.29,<1.0",
 ]
 
