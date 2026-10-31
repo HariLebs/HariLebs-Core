@@ -7,11 +7,13 @@ import secrets
 
 def generate_token(length: int = 32) -> str:
     """Generate a cryptographically secure random token."""
-    if length < 16:
-        raise ValueError("Token length must be at least 16 bytes.")
+
+    import secrets
+
+    if not isinstance(length, int) or isinstance(length, bool) or length < 16:
+        raise ValueError("Token length must be at least 16.")
 
     return secrets.token_urlsafe(length)
-
 
 def verify_secret(
     provided_secret: str,
