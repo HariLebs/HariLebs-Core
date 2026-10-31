@@ -6,7 +6,7 @@ from abc import ABC
 class BaseService(ABC):
     """Base class for shared core services."""
 
-    def init(self, name: str) -> None:
+    def __init__(self, name: str) -> None:
         if not isinstance(name, str) or not name.strip():
             raise ValueError("Service name must be a non-empty string.")
 
