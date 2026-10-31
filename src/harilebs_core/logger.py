@@ -1,24 +1,34 @@
+"""Logging utilities for HariLebs Core."""
+
 import logging
-import sys
 
 
-def setup_logger(name="HariLabs"):
-    """Configure and return a shared logger."""
+DEFAULT_LOG_FORMAT = (
+    "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+)
 
-    logger = logging.getLogger(name)
 
-    if logger.handlers:
-        return logger
+def configure_logging(
+    level: int = logging.INFO,
+    log_format: str = DEFAULT_LOG_FORMAT,
+) -> None:
+    """Configure logging for HariLebs Core."""
 
-    logger.setLevel(logging.INFO)
+    logger = logging.getLogger("harilebs_core")
 
-    handler = logging.StreamHandler(sys.stdout)
+    logger.setLevel(level)
+    logger.propagate = False
 
-    formatter = logging.Formatter(
-        "[%(asctime)s] [%(levelname)s] %(name)s: %(message)s"
-    )
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        handler.setFormatter(logging.Formatter(log_format))
+        logger.addHandler(handler)
 
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
 
-    return logger
+def get_logger(name: str) -> logging.Logger:
+    """Get a named logger for a bot or core component."""
+
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("Logger name must be a non-empty string.")
+
+    return logging.getLogger(f"harilebs_core.{name}")
