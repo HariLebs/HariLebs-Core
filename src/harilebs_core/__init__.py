@@ -1,6 +1,25 @@
 """
-HariLabs Core
-Shared core system for Telegram bots.
+HariLebs Core
+=============
+
+Reusable core framework for HariLebs Telegram bots.
 """
 
-version = "1.0.0"
+version = "0.1.0"
+
+from .exceptions import (
+    ConfigurationError,
+    HariLebsError,
+    InitializationError,
+    IntegrationError,
+    ServiceError,
+)
+
+all = [
+    "version",
+    "HariLebsError",
+    "ConfigurationError",
+    "InitializationError",
+    "ServiceError",
+    "IntegrationError",
+]
