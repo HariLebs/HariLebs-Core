@@ -7,7 +7,7 @@ class TestService(BaseService):
     """Test implementation of BaseService."""
 
     def __init__(self, name: str) -> None:
-        super().init(name)
+        super().__init__(name)
         self.initialize_count = 0
         self.shutdown_count = 0
 
