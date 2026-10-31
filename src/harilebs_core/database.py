@@ -17,7 +17,7 @@ from .base import BaseService
 class DatabaseService(BaseService):
     """Manage asynchronous database connections and sessions."""
 
-    def __init__(
+    def init(
         self,
         database_url: str,
         echo: bool = False,
@@ -26,7 +26,7 @@ class DatabaseService(BaseService):
         if not isinstance(database_url, str) or not database_url.strip():
             raise ValueError("Database URL must be a non-empty string.")
 
-        super().__init__(name)
+        super().init(name)
 
         self.database_url = database_url.strip()
         self.echo = echo
