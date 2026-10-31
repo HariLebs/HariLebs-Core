@@ -6,7 +6,7 @@ from harilebs_core.base import BaseService
 class TestService(BaseService):
     """Test implementation of BaseService."""
 
-    def init(self, name: str) -> None:
+    def __init__(self, name: str) -> None:
         super().init(name)
         self.initialize_count = 0
         self.shutdown_count = 0
