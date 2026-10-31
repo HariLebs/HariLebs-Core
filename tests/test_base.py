@@ -3,7 +3,7 @@ import pytest
 from harilebs_core.base import BaseService
 
 
-class TestService(BaseService):
+__test__ = False
     """Test implementation of BaseService."""
 
     def __init__(self, name: str) -> None:
