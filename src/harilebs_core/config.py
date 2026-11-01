@@ -5,7 +5,6 @@ from functools import lru_cache
 from pydantic import SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
@@ -31,7 +30,6 @@ class Settings(BaseSettings):
             )
 
         return self
-
 
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:

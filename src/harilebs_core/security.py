@@ -1,19 +1,8 @@
-"""Security utilities for HariLebs Core."""
+"""Security utilities for Harilebs Core."""
 
 import hashlib
 import hmac
 import secrets
-
-
-def generate_token(length: int = 32) -> str:
-    """Generate a cryptographically secure random token."""
-
-    import secrets
-
-    if not isinstance(length, int) or isinstance(length, bool) or length < 16:
-        raise ValueError("Token length must be at least 16.")
-
-    return secrets.token_urlsafe(length)
 
 def verify_secret(
     provided_secret: str,
@@ -31,7 +20,6 @@ def verify_secret(
         stored_secret.encode("utf-8"),
     )
 
-
 def hash_secret(secret: str) -> str:
     """Create a SHA-256 hash of a secret."""
     if not isinstance(secret, str) or not secret:
@@ -40,3 +28,10 @@ def hash_secret(secret: str) -> str:
     return hashlib.sha256(
         secret.encode("utf-8")
     ).hexdigest()
+
+def generate_token(length: int = 32) -> str:
+    """Generate a cryptographically secure random token."""
+    if not isinstance(length, int) or isinstance(length, bool) or length < 16:
+        raise ValueError("Token length must be at least 16.")
+
+    return secrets.token_urlsafe(length)
