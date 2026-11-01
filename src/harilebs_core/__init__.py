@@ -1,12 +1,10 @@
-"""
-HariLebs Core
-=============
+"""HariLebs Core.
 
-Reusable core framework for HariLebs Telegram bots.
+Reusable core framework for Harilebs Telegram bots.
 """
 
-version = "0.1.0"
-
+from .base import BaseService
+from .bot_manager import BotManager
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -14,15 +12,20 @@ from .exceptions import (
     IntegrationError,
     ServiceError,
 )
-
 from .security import (
     generate_token,
     hash_secret,
     verify_secret,
 )
 
-all = [
+__version__ = "0.1.0"
+version = __version__
+
+__all__ = [
+    "__version__",
     "version",
+    "BaseService",
+    "BotManager",
     "HariLebsError",
     "ConfigurationError",
     "InitializationError",
