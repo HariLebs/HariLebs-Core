@@ -37,3 +37,11 @@ def test_hash_secret():
 def test_hash_secret_empty():
     with pytest.raises(ValueError):
         hash_secret("")
+
+
+def test_verify_secret_invalid_provided_secret():
+    assert verify_secret(None, "secret123") is False
+
+
+def test_verify_secret_invalid_stored_secret():
+    assert verify_secret("secret123", None) is False

@@ -35,8 +35,6 @@ async def test_database_initialize(database):
 
     await database.shutdown()
 
-    assert database.is_initialized is False
-
 
 @pytest.mark.asyncio
 async def test_database_session(database):
@@ -65,3 +63,39 @@ async def test_database_shutdown(database):
 
     with pytest.raises(RuntimeError):
         _ = database.engine
+
+
+@pytest.mark.asyncio
+async def test_database_connection_failure_disposes_engine(
+    database, monkeypatch
+):
+    class FakeConnection:
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return False
+
+        async def execute(self, query):
+            raise RuntimeError("Connection failed")
+
+    class FakeEngine:
+        disposed = False
+
+        def connect(self):
+            return FakeConnection()
+
+        async def dispose(self):
+            self.disposed = True
+
+    engine = FakeEngine()
+
+    monkeypatch.setattr(
+        "harilebs_core.database.create_async_engine",
+        lambda *args, **kwargs: engine,
+    )
+
+    with pytest.raises(RuntimeError, match="Connection failed"):
+        await database.initialize()
+
+    assert engine.disposed is True

@@ -1,6 +1,7 @@
 import pytest
 from pydantic import SecretStr, ValidationError
 
+from harilebs_core import config
 from harilebs_core.config import Settings
 
 
@@ -39,3 +40,16 @@ def test_settings_accept_complete_api_credentials():
 
     assert settings.api_id == 12345
     assert settings.api_hash.get_secret_value() == "test-api-hash"
+
+
+def test_get_settings_returns_cached_instance(monkeypatch):
+    config.get_settings.cache_clear()
+    monkeypatch.setattr(config, "Settings", lambda: object())
+
+    try:
+        first = config.get_settings()
+        second = config.get_settings()
+
+        assert first is second
+    finally:
+        config.get_settings.cache_clear()
