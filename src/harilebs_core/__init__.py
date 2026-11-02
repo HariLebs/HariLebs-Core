@@ -76,6 +76,12 @@ from .telegram_users import (
     get_user_mention_target,
 )
 
+from .telegram_chats import (
+    TelegramChatInfo,
+    build_chat_info,
+    get_chat_display_name,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -106,6 +112,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "get_chat_display_name",
+    "build_chat_info",
+    "TelegramChatInfo",
     "get_user_mention_target",
     "get_display_name",
     "build_user_info",
