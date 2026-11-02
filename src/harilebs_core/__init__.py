@@ -56,6 +56,13 @@ from .telegram_messages import (
     validate_message_text,
 )
 
+from .telegram_permissions import (
+    PERMISSION_FIELDS,
+    build_chat_permissions,
+    build_full_permissions,
+    build_restricted_permissions,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -86,6 +93,10 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "build_restricted_permissions",
+    "build_full_permissions",
+    "build_chat_permissions",
+    "PERMISSION_FIELDS",
     "validate_message_text",
     "prepare_message",
     "count_message_chunks",
