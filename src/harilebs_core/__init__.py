@@ -11,6 +11,8 @@ from .scheduler import SchedulerService
 
 from .health_check import HealthCheckResult, HealthCheckService
 
+from .metrics import MetricsService
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -39,6 +41,7 @@ __all__ = [
     "RateLimiterService",
     "HealthCheckResult",
     "HealthCheckService",
+    "MetricsService",
     "HariLebsError",
     "ConfigurationError",
     "InitializationError",
