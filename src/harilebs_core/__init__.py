@@ -114,6 +114,12 @@ from .telegram_polls import (
     build_poll_info,
 )
 
+from .telegram_locations import (
+    TelegramLocationInfo,
+    build_location_info,
+    calculate_distance,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -144,6 +150,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "calculate_distance",
+    "build_location_info",
+    "TelegramLocationInfo",
     "build_poll_info",
     "TelegramPollInfo",
     "is_valid_invite_link",
