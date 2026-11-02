@@ -25,6 +25,13 @@ from .telegram_error_handler import TelegramErrorHandler
 
 from .telegram_commands import build_bot_commands
 
+from .telegram_callback_data import (
+    MAX_CALLBACK_DATA_BYTES,
+    build_callback_data,
+    parse_callback_data,
+    validate_callback_data,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -55,6 +62,10 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "validate_callback_data",
+    "parse_callback_data",
+    "build_callback_data",
+    "MAX_CALLBACK_DATA_BYTES",
     "build_bot_commands",
     "TelegramErrorHandler",
     "split_text",
