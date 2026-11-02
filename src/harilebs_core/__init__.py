@@ -13,6 +13,8 @@ from .health_check import HealthCheckResult, HealthCheckService
 
 from .metrics import MetricsService
 
+from .telegram_middleware import TelegramMiddleware
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -42,6 +44,7 @@ __all__ = [
     "HealthCheckResult",
     "HealthCheckService",
     "MetricsService",
+    "TelegramMiddleware",
     "HariLebsError",
     "ConfigurationError",
     "InitializationError",
