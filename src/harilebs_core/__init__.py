@@ -9,6 +9,8 @@ from .cache import CacheService
 from .rate_limiter import RateLimitResult, RateLimiterService
 from .scheduler import SchedulerService
 
+from .health_check import HealthCheckResult, HealthCheckService
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -35,6 +37,8 @@ __all__ = [
     "SchedulerService",
     "RateLimitResult",
     "RateLimiterService",
+    "HealthCheckResult",
+    "HealthCheckService",
     "HariLebsError",
     "ConfigurationError",
     "InitializationError",
