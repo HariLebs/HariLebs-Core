@@ -23,6 +23,8 @@ from .telegram_helpers import escape_html, format_html, split_text
 
 from .telegram_error_handler import TelegramErrorHandler
 
+from .telegram_commands import build_bot_commands
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -53,6 +55,7 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "build_bot_commands",
     "TelegramErrorHandler",
     "split_text",
     "format_html",
