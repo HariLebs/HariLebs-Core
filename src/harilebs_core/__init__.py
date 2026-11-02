@@ -15,6 +15,8 @@ from .metrics import MetricsService
 
 from .telegram_middleware import TelegramMiddleware
 
+from .telegram_filters import AdminFilter, ChatTypeFilter, UserIdFilter
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -45,6 +47,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "UserIdFilter",
+    "ChatTypeFilter",
+    "AdminFilter",
     "HariLebsError",
     "ConfigurationError",
     "InitializationError",
