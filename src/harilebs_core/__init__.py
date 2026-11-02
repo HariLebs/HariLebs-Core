@@ -6,6 +6,7 @@ Reusable core framework for Harilebs Telegram bots.
 from .base import BaseService
 from .bot_manager import BotManager
 from .cache import CacheService
+from .rate_limiter import RateLimitResult, RateLimiterService
 from .scheduler import SchedulerService
 
 from .exceptions import (
@@ -32,6 +33,8 @@ __all__ = [
     "BotManager",
     "CacheService",
     "SchedulerService",
+    "RateLimitResult",
+    "RateLimiterService",
     "HariLebsError",
     "ConfigurationError",
     "InitializationError",
