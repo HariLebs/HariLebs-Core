@@ -37,6 +37,8 @@ from .telegram_deep_links import (
     parse_start_parameter,
 )
 
+from .telegram_mentions import build_user_mention
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -67,6 +69,7 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "build_user_mention",
     "parse_start_parameter",
     "build_start_link",
     "validate_callback_data",
