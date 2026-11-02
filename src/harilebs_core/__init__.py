@@ -69,6 +69,13 @@ from .telegram_files import (
     is_file_within_limit,
 )
 
+from .telegram_users import (
+    TelegramUserInfo,
+    build_user_info,
+    get_display_name,
+    get_user_mention_target,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -99,6 +106,10 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "get_user_mention_target",
+    "get_display_name",
+    "build_user_info",
+    "TelegramUserInfo",
     "is_file_within_limit",
     "build_file_info",
     "TelegramFileInfo",
