@@ -17,6 +17,8 @@ from .telegram_middleware import TelegramMiddleware
 
 from .telegram_filters import AdminFilter, ChatTypeFilter, UserIdFilter
 
+from .telegram_keyboards import build_inline_keyboard, build_reply_keyboard
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -47,6 +49,8 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "build_reply_keyboard",
+    "build_inline_keyboard",
     "UserIdFilter",
     "ChatTypeFilter",
     "AdminFilter",
