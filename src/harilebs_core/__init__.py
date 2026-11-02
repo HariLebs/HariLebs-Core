@@ -95,6 +95,14 @@ from .telegram_groups import (
     is_group_admin,
 )
 
+from .telegram_channels import (
+    TelegramChannelInfo,
+    build_channel_info,
+    get_channel_display_name,
+    get_channel_link,
+    is_public_channel,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -125,6 +133,11 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "is_public_channel",
+    "get_channel_link",
+    "get_channel_display_name",
+    "build_channel_info",
+    "TelegramChannelInfo",
     "is_group_admin",
     "get_group_display_name",
     "build_group_info",
