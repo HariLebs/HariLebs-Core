@@ -120,6 +120,14 @@ from .telegram_locations import (
     calculate_distance,
 )
 
+from .telegram_contacts import (
+    TelegramContactInfo,
+    build_contact_info,
+    format_phone_number,
+    get_contact_display_name,
+    has_telegram_user_id,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -150,6 +158,11 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "has_telegram_user_id",
+    "get_contact_display_name",
+    "format_phone_number",
+    "build_contact_info",
+    "TelegramContactInfo",
     "calculate_distance",
     "build_location_info",
     "TelegramLocationInfo",
