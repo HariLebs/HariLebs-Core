@@ -109,6 +109,11 @@ from .telegram_invites import (
     is_valid_invite_link,
 )
 
+from .telegram_polls import (
+    TelegramPollInfo,
+    build_poll_info,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -139,6 +144,8 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "build_poll_info",
+    "TelegramPollInfo",
     "is_valid_invite_link",
     "extract_invite_hash",
     "build_invite_link",
