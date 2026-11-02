@@ -49,6 +49,13 @@ from .telegram_formatting import (
     underline,
 )
 
+from .telegram_messages import (
+    TELEGRAM_MESSAGE_LIMIT,
+    count_message_chunks,
+    prepare_message,
+    validate_message_text,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -79,6 +86,10 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "validate_message_text",
+    "prepare_message",
+    "count_message_chunks",
+    "TELEGRAM_MESSAGE_LIMIT",
     "underline",
     "strikethrough",
     "pre",
