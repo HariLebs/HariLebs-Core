@@ -19,6 +19,8 @@ from .telegram_filters import AdminFilter, ChatTypeFilter, UserIdFilter
 
 from .telegram_keyboards import build_inline_keyboard, build_reply_keyboard
 
+from .telegram_helpers import escape_html, format_html, split_text
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -49,6 +51,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "split_text",
+    "format_html",
+    "escape_html",
     "build_reply_keyboard",
     "build_inline_keyboard",
     "UserIdFilter",
