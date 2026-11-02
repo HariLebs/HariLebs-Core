@@ -88,6 +88,13 @@ from .telegram_media import (
     get_media_type_from_mime,
 )
 
+from .telegram_groups import (
+    TelegramGroupInfo,
+    build_group_info,
+    get_group_display_name,
+    is_group_admin,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -118,6 +125,10 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "is_group_admin",
+    "get_group_display_name",
+    "build_group_info",
+    "TelegramGroupInfo",
     "get_media_type_from_mime",
     "get_media_type",
     "get_file_extension",
