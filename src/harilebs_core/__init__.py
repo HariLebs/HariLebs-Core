@@ -63,6 +63,12 @@ from .telegram_permissions import (
     build_restricted_permissions,
 )
 
+from .telegram_files import (
+    TelegramFileInfo,
+    build_file_info,
+    is_file_within_limit,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -93,6 +99,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "is_file_within_limit",
+    "build_file_info",
+    "TelegramFileInfo",
     "build_restricted_permissions",
     "build_full_permissions",
     "build_chat_permissions",
