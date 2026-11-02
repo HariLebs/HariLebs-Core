@@ -103,6 +103,12 @@ from .telegram_channels import (
     is_public_channel,
 )
 
+from .telegram_invites import (
+    build_invite_link,
+    extract_invite_hash,
+    is_valid_invite_link,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -133,6 +139,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "is_valid_invite_link",
+    "extract_invite_hash",
+    "build_invite_link",
     "is_public_channel",
     "get_channel_link",
     "get_channel_display_name",
