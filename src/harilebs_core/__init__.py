@@ -32,6 +32,11 @@ from .telegram_callback_data import (
     validate_callback_data,
 )
 
+from .telegram_deep_links import (
+    build_start_link,
+    parse_start_parameter,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -62,6 +67,8 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "parse_start_parameter",
+    "build_start_link",
     "validate_callback_data",
     "parse_callback_data",
     "build_callback_data",
