@@ -39,6 +39,16 @@ from .telegram_deep_links import (
 
 from .telegram_mentions import build_user_mention
 
+from .telegram_formatting import (
+    bold,
+    code,
+    italic,
+    link,
+    pre,
+    strikethrough,
+    underline,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -69,6 +79,13 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "underline",
+    "strikethrough",
+    "pre",
+    "link",
+    "italic",
+    "code",
+    "bold",
     "build_user_mention",
     "parse_start_parameter",
     "build_start_link",
