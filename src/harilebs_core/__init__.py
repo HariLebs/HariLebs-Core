@@ -82,6 +82,12 @@ from .telegram_chats import (
     get_chat_display_name,
 )
 
+from .telegram_media import (
+    get_file_extension,
+    get_media_type,
+    get_media_type_from_mime,
+)
+
 from .exceptions import (
     ConfigurationError,
     HariLebsError,
@@ -112,6 +118,9 @@ __all__ = [
     "HealthCheckService",
     "MetricsService",
     "TelegramMiddleware",
+    "get_media_type_from_mime",
+    "get_media_type",
+    "get_file_extension",
     "get_chat_display_name",
     "build_chat_info",
     "TelegramChatInfo",
