@@ -16,12 +16,10 @@ class BaseService(ABC):
     @property
     def is_initialized(self) -> bool:
         """Check whether the service is initialized."""
-
         return self._initialized
 
     async def initialize(self) -> None:
         """Initialize the service."""
-
         if self._initialized:
             return
 
@@ -30,7 +28,6 @@ class BaseService(ABC):
 
     async def shutdown(self) -> None:
         """Shut down the service."""
-
         if not self._initialized:
             return
 
